@@ -5,7 +5,7 @@
     font-family: 'Caveat', cursive;
 }
 .text{
-    margin-top: 5px;
+    
     text-align: center;
 }
 .zoom{
@@ -17,4 +17,7 @@
 .fuente2{
     
     font-family: 'Caveat', cursive;
+    font-size: 30px;
+    font-weight: 500;
+    
 }
