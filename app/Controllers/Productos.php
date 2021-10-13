@@ -18,6 +18,16 @@ class Productos extends BaseController
         $descripcion=$this->request->getPost("descripcion");
         $tipo=$this->request->getPost("tipo");
 
+        #validar que llego
+        if($this->validate('producto')){
+            echo(" <h1> Melo </h1> ");
+
+        }else{
+            $mensaje = " Por favor diligencie todos los campos "; 
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje', $mensaje);
+
+        }
+        
         #-Crear un arreglo asociativo con los datos de arriba
         $datos=array(
             "producto"=>$producto,
@@ -27,6 +37,6 @@ class Productos extends BaseController
             "tipo"=>$tipo
         );
         print_r($datos);
-
+        
     }
 }
