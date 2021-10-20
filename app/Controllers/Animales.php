@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+//se trae(importa) el modelo de datos
+use App\Models\AnimalModelo;
 
 class Animales extends BaseController
 {
@@ -20,7 +22,25 @@ class Animales extends BaseController
 
         #validar que llego
         if($this->validate('animal')){
-            echo(" <h1> Melo </h1> ");
+            $datos=array(
+                "nombre"=>$nombre,
+                "foto"=>$foto,
+                "edad"=>$edad,
+                "descripcion"=>$descripcion,
+                "tipo"=>$tipo
+            );
+
+            #3.se organizan losdatos en un array
+            #los naranjados(claves) deben coincidir con las columnas de la base de datos
+            try{
+                $modelo =new AnimalModelo();
+                $modelo->insert($datos);
+                return redirect()->to(site_url('/Animales/registro'))->with('mensaje',"Exito al agregando el animal");
+
+            }catch(\Exception $error){
+                return redirect()->to(site_url('/Animales/registro'))->with('mensaje', $error->getMessage());
+            }
+
 
         }else{
             $mensaje = " Por favor diligencie todos los campos "; 
@@ -28,15 +48,9 @@ class Animales extends BaseController
 
         }
         
-        #-Crear un arreglo asociativo con los datos de arriba
-        $datos=array(
-            "nombre"=>$nombre,
-            "foto"=>$foto,
-            "edad"=>$edad,
-            "descripcion"=>$descripcion,
-            "tipo"=>$tipo
-        );
-        print_r($datos);
+        
+       
+        
         
     }
 }

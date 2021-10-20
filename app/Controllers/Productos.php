@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+//se trae(importa) el modelo de datos
+use App\Models\ProductoModelo;
 
 class Productos extends BaseController
 {
@@ -20,7 +22,27 @@ class Productos extends BaseController
 
         #validar que llego
         if($this->validate('producto')){
-            echo(" <h1> Melo </h1> ");
+            #3.se organizan losdatos en un array
+            #los naranjados(claves) deben coincidir con las columnas de la base de datos
+
+
+            $datos=array(
+                "producto"=>$producto,
+                "fotografia"=>$fotografia,
+                "precio"=>$precio,
+                "descripcion"=>$descripcion,
+                "tipo"=>$tipo
+            );
+
+            #Intentamos grabar los datos en la base de datos
+            try{
+                $modelo =new ProductoModelo();
+                $modelo->insert($datos);
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',"Exito al agregar el producto");
+
+            }catch(\Exception $error){
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje', $error->getMessage());
+            }
 
         }else{
             $mensaje = " Por favor diligencie todos los campos "; 
@@ -28,15 +50,9 @@ class Productos extends BaseController
 
         }
         
-        #-Crear un arreglo asociativo con los datos de arriba
-        $datos=array(
-            "producto"=>$producto,
-            "fotografia"=>$fotografia,
-            "precio"=>$precio,
-            "descripcion"=>$descripcion,
-            "tipo"=>$tipo
-        );
-        print_r($datos);
+        
+        
+       
         
     }
 }
