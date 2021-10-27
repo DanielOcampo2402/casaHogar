@@ -89,8 +89,9 @@
                 
                 </form>
             </div>
-            <div class="col-12 col-md-5 align-self-center">
+            <div class="col-12 col-md-5 align-self-center text-center">
                     <img src="<?= base_url('public/img/cuidoRegistro.jpg') ?>" alt="imagen" class="img-fluid w-100">
+                    <a href="<?=site_url('/productos/listado') ?>" class="btn btn-danger mt-3">Ver inventario</a>
             </div> 
         </div> 
         

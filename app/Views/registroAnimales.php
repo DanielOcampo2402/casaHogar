@@ -61,7 +61,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Edad:</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1"  name="edad">
+                        <input type="text" class="form-control" id="exampleInputPassword1"  name="edad">
                     </div>
                    
                     <div class="form-floating mb-3">
@@ -87,8 +87,9 @@
                 
                 </form>
             </div>
-            <div class="col-12 col-md-5 align-self-center">
+            <div class="col-12 col-md-5 align-self-center text-center">
                     <img src="<?= base_url('public/img/perrosRegistro.jpg') ?>" alt="imagen" class="img-fluid w-100">
+                    <a href="<?=site_url('/Animales/listado') ?>" class="btn btn-danger mt-5">Ver inventario</a>
             </div> 
         </div> 
         
@@ -120,5 +121,6 @@
 <script src="https://kit.fontawesome.com/3675f85246.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <script type="module" src="<?=base_url('public/js/lanzarmodal.js') ?>"></script>
+
 </body>
 </html>

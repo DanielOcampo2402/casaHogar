@@ -34,8 +34,12 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/productos/registro', 'Productos::index');
 $routes->get('/Animales/registro', 'Animales::index');
+$routes->get('/productos/listado', 'Productos::buscar');
+$routes->get('/Animales/listado', 'Animales::buscar');
 $routes->post('/productos/registro/nuevo', 'Productos::registrar');
 $routes->post('/Animales/registro/nuevo', 'Animales::registrar');
+$routes->delete('/productos/eliminar/(:num)', 'Productos::eliminar/$1');
+$routes->delete('/Animales/eliminar/(:num)', 'Animales::eliminar/$1');
 
 
 /*
