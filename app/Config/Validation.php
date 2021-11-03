@@ -46,6 +46,11 @@ class Validation
 
 
     ];
+    public $producto2=[ //solo se usa para el editar
+        'producto'=> 'required',
+        'precio'=> 'required',
+        'descripcion'=> 'required',
+    ];
 
     public $animal=[
         'nombre'=> 'required',
@@ -53,8 +58,11 @@ class Validation
         'edad'=> 'required',
         'descripcion'=> 'required',
         'tipo'=> 'required'
-
-
+    ];
+    public $animal2=[//solo se usa para el editar
+        'nombre'=> 'required',
+        'edad'=> 'required',
+        'descripcion'=> 'required'
     ];
 
     //--------------------------------------------------------------------

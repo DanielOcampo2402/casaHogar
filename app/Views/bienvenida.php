@@ -121,9 +121,46 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 </section>
+<div class="row fondopantalla">
+</div>
+<footer class="fondoDos p-5">
+
+		<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-12 col-md-4">
+				<h3 class="fw-bold">Horario de atención:</h3>
+				<p>Lunes a viernes 7:00 am - 3:00 pm / Sábado: 7:00 am - 2:30 pm / Domingos y festivos 8:00 am - 3:00 pm</p>
+				<br>
+				<h3 class="fw-bold">Dirección:</h3>
+				<p>Belén Altavista Calle 8A # 112-82 </p>
+			</div>
+
+			<div class="col-12 col-md-4">
+				<h3 class="fw-bold">Ayudas:</h3>
+				<p>Glosario / Correo remoto  /  Monitoreo y desempeño de uso del sitio web</p>
+				<br>
+				<h3 class="fw-bold">Protección de datos:</h3>
+				<p>Protección de datos personales en el Municipio de Medellín </p>
+			</div>
+
+			<div class="col-12 col-md-4">
+				<h1 class="fw-bold fuente"><span><i class="fas fa-paw"></i></span>ANIMALANDIA</h1>
+				<br>
+				<i class="fab fa-facebook fa-3x"></i>
+				<i class="fab fa-instagram fa-3x"></i>
+				<i class="fab fa-youtube fa-3x"></i>
+				<br>
+				<p class="mt-4">© 2021 / NIT: 890905211-1 / Código DANE: 05001 / Código Postal: 050015</p>
+				
+			</div>
+		</div>
+
+		</div>
+
+	</footer>
 	
 
 <script src="https://kit.fontawesome.com/3675f85246.js" crossorigin="anonymous"></script>

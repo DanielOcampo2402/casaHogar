@@ -22,3 +22,16 @@
     
     
 }
+.fondoDos{
+    background-color: #fdfdfd;
+}
+
+.fondopantalla{
+
+    -webkit-filter: grayscale(100%);
+    background-image: url('../img/fondopantalla.jpg');
+    background-attachment: fixed;
+    height: 550px;
+    filter: grayscale(100%);
+
+}

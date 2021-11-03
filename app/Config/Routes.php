@@ -40,7 +40,8 @@ $routes->post('/productos/registro/nuevo', 'Productos::registrar');
 $routes->post('/Animales/registro/nuevo', 'Animales::registrar');
 $routes->delete('/productos/eliminar/(:num)', 'Productos::eliminar/$1');
 $routes->delete('/Animales/eliminar/(:num)', 'Animales::eliminar/$1');
-
+$routes->post('/productos/editar/(:num)', 'Productos::editar/$1');
+$routes->post('/Animales/editar/(:num)', 'Animales::editar/$1');
 
 /*
  * --------------------------------------------------------------------

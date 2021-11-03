@@ -48,19 +48,19 @@
     <div class="container mt-5">
         <div class="row row-cols-1 row-cols-5 g-4">
             <?php foreach($animales as $animal): ?>
+                <?php if($animal["tipo"]==1):?>
                 <div class="col">
                     <div class="card h-100 p-3">
-                        <img src="<?= $animal["foto"] ?>" class="card-img-top" alt="...">
+                        <img src="<?= $animal["foto"] ?>" class="card-img-top img-fluid w-100 h-100" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"> <?= $animal["nombre"]?></h5>
                             <p class="card-text"> <?= $animal["edad"]?></p>
                             <p class="card-text"> <?= $animal["descripcion"]?></p>
                             <a data-bs-toggle="modal" data-bs-target="#confirmacion<?=$animal["id"] ?>" href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                            <a href="#" class="btn btn-success"><i class="fas fa-pen-square"></i></a>
+                            <a data-bs-toggle="modal" data-bs-target="#editar<?=$animal["id"] ?>" href="#" class="btn btn-success"><i class="fas fa-pen-square"></i></a>
                         </div>
                     </div>
                     <section>
-                        
                         <div class="modal fade" id="confirmacion<?=$animal["id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -80,7 +80,44 @@
                             </div>
                         </div>
                     </section>
+                    <section>
+                        <div class="modal fade" id="editar<?=$animal["id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header fondo fuente text-white">
+                                        <h5 class="modal-title" id="exampleModalLabel">CASA HOGAR</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-3 align-self-center">
+                                                <img src="<?= $animal["foto"] ?>" alt="foto" class="img-fluid w-100">
+                                            </div>
+                                            <div class="col-9">
+                                                <form action="<?=site_url('/Animales/editar/'.$animal["id"]) ?>" method="POST">
+                                                    <div class="mb-3">
+                                                        <label  class="form-label">Nombre</label>
+                                                        <input type="text" class="form-control" name="nombre" value="<?=$animal["nombre"] ?>">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label  class="form-label">Edad</label>
+                                                        <input type="text" class="form-control" name="edad" value="<?=$animal["edad"] ?>">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label  class="form-label">Descripcion</label>
+                                                        <input type="text" class="form-control" name="descripcion" value="<?=$animal["descripcion"] ?>">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Editar</button>
+                                                </form>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
+                <?php endif?>
             <?php endforeach?>
         </div>
 
@@ -88,9 +125,28 @@
 
 
 </main>
+<section>
+    <?php if(session('mensaje')): ?>
+        <div class="modal fade" id="modalrespuesta" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header fondo" style="justify-content: center;">
+                        <h2 class="modal-title fuente text-white" >CASAHOGAR</h2>
+                        
+                    </div>
+                    <div class="modal-body">
+                        <h5 style="text-align: center">
+                            <?= session('mensaje') ?>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif ?> 
+</section>
 
 <script src="https://kit.fontawesome.com/3675f85246.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
+<script type="module" src="<?=base_url('public/js/lanzarmodal.js') ?>"></script>
 </body>
 </html>
