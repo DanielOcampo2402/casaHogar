@@ -90,31 +90,31 @@
 			</div>
 			<div class="row d-flex justify-content-center mt-5 mx-5">
 				<div class="col-1">
-					<a href="">
+						<a href="<?= site_url("/Animales/listadoPerros") ?>">
 						<img src="<?= base_url('public/img/dog-icon.png')?>" alt="iconoperro" class="img-fluid zoom w-100">
 					</a>
             		<p class="text">perros</p>
           		</div>
 				<div class="col-1">
-					<a href="">
+					<a href="<?= site_url("/Animales/listadoGatos") ?>">
 						<img src="<?= base_url('public/img/cat-icon.png')?>" alt="iconogato" class="img-fluid zoom w-100">
 					</a>
 					<p class="text-center">gatos</p>
 				</div>
 				<div class="col-1">
-					<a href="">
+						<a href="<?= site_url("/Animales/listadoAves") ?>">
 						<img src="<?= base_url('public/img/bird-icon.png')?>" alt="iconoave" class="img-fluid zoom w-100">
 					</a>
 					<p class="text-center">Aves</p>
 				</div>
 				<div class="col-1">
-					<a href="">
+					<a href="<?= site_url("/Animales/listadoReptiles") ?>">
 						<img src="<?= base_url('public/img/reptile-icon.png')?>" alt="iconoreptiles" class="img-fluid zoom w-100">
 					</a>
 					<p class="text-center">reptiles</p>
 				</div>
 				<div class="col-1">
-					<a href="">
+						<a href="<?= site_url("/Animales/listadoCaballos") ?>">
 						<img src="<?= base_url('public/img/horse-icon.png')?>" alt="iconocaballos" class="img-fluid zoom w-100">
 					</a>
 					<p class="text-center">caballos</p>

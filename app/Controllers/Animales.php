@@ -35,7 +35,7 @@ class Animales extends BaseController
             try{
                 $modelo =new AnimalModelo();
                 $modelo->insert($datos);
-                return redirect()->to(site_url('/Animales/registro'))->with('mensaje',"Exito al agregando el animal");
+                return redirect()->to(site_url('/Animales/registro'))->with('mensaje',"Exito al agregar el animal");
 
             }catch(\Exception $error){
                 return redirect()->to(site_url('/Animales/registro'))->with('mensaje', $error->getMessage());
@@ -58,6 +58,76 @@ class Animales extends BaseController
             $resultado=$modelo->findAll();
             $animales = array('animales' => $resultado);
             return view('listaAnimales', $animales);
+           
+
+        }catch(\Exception $error){
+            return redirect()->to(site_url('/Animales/registro'))->with('mensaje', $error->getMessage());
+        }
+        
+    }
+    public function buscarPerro(){
+
+        try{
+            $modelo =new AnimalModelo();
+            $resultado=$modelo->findAll();
+            $animales = array('animales' => $resultado);
+            return view('listaPerros', $animales);
+           
+
+        }catch(\Exception $error){
+            return redirect()->to(site_url('/Animales/registro'))->with('mensaje', $error->getMessage());
+        }
+        
+    }
+    public function buscarGato(){
+
+        try{
+            $modelo =new AnimalModelo();
+            $resultado=$modelo->findAll();
+            $animales = array('animales' => $resultado);
+            return view('listaGatos', $animales);
+           
+
+        }catch(\Exception $error){
+            return redirect()->to(site_url('/Animales/registro'))->with('mensaje', $error->getMessage());
+        }
+        
+    }
+    public function buscarAve(){
+
+        try{
+            $modelo =new AnimalModelo();
+            $resultado=$modelo->findAll();
+            $animales = array('animales' => $resultado);
+            return view('listaAves', $animales);
+           
+
+        }catch(\Exception $error){
+            return redirect()->to(site_url('/Animales/registro'))->with('mensaje', $error->getMessage());
+        }
+        
+    }
+    public function buscarCaballo(){
+
+        try{
+            $modelo =new AnimalModelo();
+            $resultado=$modelo->findAll();
+            $animales = array('animales' => $resultado);
+            return view('listaCaballos', $animales);
+           
+
+        }catch(\Exception $error){
+            return redirect()->to(site_url('/Animales/registro'))->with('mensaje', $error->getMessage());
+        }
+        
+    }
+    public function buscarReptiles(){
+
+        try{
+            $modelo =new AnimalModelo();
+            $resultado=$modelo->findAll();
+            $animales = array('animales' => $resultado);
+            return view('listaReptiles', $animales);
            
 
         }catch(\Exception $error){
@@ -98,7 +168,7 @@ class Animales extends BaseController
             try{
                 $modelo =new AnimalModelo();
                 $modelo->update($id,$datos);
-                return redirect()->to(site_url('/Animales/listado'))->with('mensaje',"Exito al editando el animal");
+                return redirect()->to(site_url('/Animales/listado'))->with('mensaje',"Exito al editar el animal");
     
             }catch(\Exception $error){
                 return redirect()->to(site_url('/Animales/listado'))->with('mensaje', $error->getMessage());
